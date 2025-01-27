@@ -25,6 +25,9 @@ app.use("/api/admin/", adminRoutes);
 
 async function main(){
    await mongoose.connect(process.env.DB_CONNECTION);
+   app.use("/",(req,res)=>{
+    res.send("Books Store Server is Running !")
+   })
 }
 
 app.listen(port,()=>{
